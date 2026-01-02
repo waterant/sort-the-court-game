@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Dandy Effect | tapyesno.games</title>
+  <meta name="description" content="Play The Dandy Effect online at tapyesno.games. Make stylish decisions, track shifting outcomes, and uncover surprising consequences.">
+  <link rel="canonical" href="https://tapyesno.games/dandy">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-dandy">
+  <nav class="top-nav">
+    <div class="logo">tapyesno.games</div>
+    <div class="nav-links">
+      <a class="nav-link" href="index.html">Sort the Court!</a>
+      <a class="nav-link active" href="dandy.html">The Dandy Effect</a>
+      <a class="nav-link" href="demon-lord.html">As Expected of the Demon Lord</a>
+    </div>
+  </nav>
+  <header class="hero">
+    <div class="hero-content">
+      <p class="eyebrow">tapyesno.games</p>
+      <h1>The Dandy Effect</h1>
+      <p class="tagline">A stylish chain of decisions where small choices echo across the story.</p>
+      <div class="hero-actions">
+        <a href="#play" class="button primary">Play Now</a>
+        <a class="button ghost" href="#about">How It Feels</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="stat">
+        <span class="stat-label">Game Mood</span>
+        <span class="stat-value">Stylish Strategy</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Session Length</span>
+        <span class="stat-value">4-7 Minutes</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Core Loop</span>
+        <span class="stat-value">Choice -> Ripple</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="play" class="section play-section">
+      <div class="section-header">
+        <h2>Play The Dandy Effect Online</h2>
+        <p>Start the run instantly and see how the world reacts to your style.</p>
+      </div>
+      <div class="iframe-shell">
+        <iframe height="167" frameborder="0" src="https://itch.io/embed/3548394" width="552" title="The Dandy Effect by Crazybear Games" allow="fullscreen" allowfullscreen></iframe>
+      </div>
+      <p class="note">Tip: Small decisions can unlock unique paths, so experiment freely.</p>
+    </section>
+
+    <section id="about" class="section">
+      <div class="section-grid">
+        <div>
+          <h2>About the Game</h2>
+          <p>The Dandy Effect is a compact narrative strategy game where every decision creates a ripple. The tone is playful, but the consequences can surprise you.</p>
+          <p>It rewards experimentation: see how your choices change who you meet and what options appear next.</p>
+        </div>
+        <div class="info-card">
+          <h2>Game Basics</h2>
+          <ul>
+            <li>Genre: Narrative strategy, branching outcomes</li>
+            <li>Goal: Navigate choices and discover the best path</li>
+            <li>Play Style: Fast sessions with replay value</li>
+            <li>Platform: Browser-based on tapyesno.games</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section highlight">
+      <div class="section-header">
+        <h2>Why You Will Replay</h2>
+        <p>Multiple routes, quick resets, and a breezy rhythm make it easy to keep exploring.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <h3>1. Make a Choice</h3>
+          <p>Decide quickly, then watch the story shift around your style.</p>
+        </div>
+        <div class="step">
+          <h3>2. Track the Ripples</h3>
+          <p>Characters and options change based on your earlier decisions.</p>
+        </div>
+        <div class="step">
+          <h3>3. Try a New Route</h3>
+          <p>Restart and experiment to unlock new responses.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-grid">
+        <div>
+          <h2>Other Games</h2>
+          <p>Looking for more decision-driven games? Explore the other two titles on this site.</p>
+        </div>
+        <div class="game-grid">
+          <a class="game-card" href="index.html">
+            <h3>Sort the Court!</h3>
+            <p>Rule a tiny kingdom with fast yes-or-no decisions.</p>
+          </a>
+          <a class="game-card" href="demon-lord.html">
+            <h3>As Expected of the Demon Lord</h3>
+            <p>Manage a mischievous court and handle unexpected petitions.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>The Dandy Effect on tapyesno.games • Keep every choice stylish.</p>
+  </footer>
+  <script>
+    (() => {
+      const playLink = document.querySelector('a[href="#play"].button.primary');
+      const playSection = document.getElementById("play");
+      if (!playLink || !playSection) return;
+      playLink.addEventListener("click", (event) => {
+        event.preventDefault();
+        playSection.scrollIntoView({ behavior: "smooth" });
+        const iframe = playSection.querySelector("iframe");
+        if (iframe && iframe.requestFullscreen) {
+          iframe.requestFullscreen().catch(() => {});
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

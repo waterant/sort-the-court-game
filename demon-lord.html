@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>As Expected of the Demon Lord | tapyesno.games</title>
+  <meta name="description" content="Play As Expected of the Demon Lord online at tapyesno.games. Make quick rulings, balance chaos, and steer your domain.">
+  <link rel="canonical" href="https://tapyesno.games/demon-lord">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-demon">
+  <nav class="top-nav">
+    <div class="logo">tapyesno.games</div>
+    <div class="nav-links">
+      <a class="nav-link" href="index.html">Sort the Court!</a>
+      <a class="nav-link" href="dandy.html">The Dandy Effect</a>
+      <a class="nav-link active" href="demon-lord.html">As Expected of the Demon Lord</a>
+    </div>
+  </nav>
+  <header class="hero">
+    <div class="hero-content">
+      <p class="eyebrow">tapyesno.games</p>
+      <h1>As Expected of the Demon Lord</h1>
+      <p class="tagline">Fast rulings, unexpected petitioners, and a demon lord who must keep chaos in check.</p>
+      <div class="hero-actions">
+        <a href="#play" class="button primary">Play Now</a>
+        <a class="button ghost" href="#about">What to Expect</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="stat">
+        <span class="stat-label">Game Mood</span>
+        <span class="stat-value">Chaos Control</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Session Length</span>
+        <span class="stat-value">3-6 Minutes</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Core Loop</span>
+        <span class="stat-value">Rule -> Consequence</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="play" class="section play-section">
+      <div class="section-header">
+        <h2>Play As Expected of the Demon Lord</h2>
+        <p>Make a ruling and see what ripple it causes in your domain.</p>
+      </div>
+      <div class="iframe-shell">
+        <iframe height="167" frameborder="0" src="https://itch.io/embed/2705727" width="552" title="As Expected of the Demon Lord by RelezonGames" allow="fullscreen" allowfullscreen></iframe>
+      </div>
+      <p class="note">Tip: Balance short-term wins with long-term stability to avoid a spiral.</p>
+    </section>
+
+    <section id="about" class="section">
+      <div class="section-grid">
+        <div>
+          <h2>About the Game</h2>
+          <p>As Expected of the Demon Lord is a compact decision game where each petition pushes your realm toward order or chaos.</p>
+          <p>Quick sessions, sharp twists, and snappy pacing make it easy to replay and find new outcomes.</p>
+        </div>
+        <div class="info-card">
+          <h2>Game Basics</h2>
+          <ul>
+            <li>Genre: Choice-driven micro strategy</li>
+            <li>Goal: Keep the domain stable</li>
+            <li>Play Style: Fast cycles, multiple endings</li>
+            <li>Platform: Browser-based on tapyesno.games</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section highlight">
+      <div class="section-header">
+        <h2>How It Plays</h2>
+        <p>Every day brings a new petition. Choose quickly, then adapt to the results.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <h3>1. Hear a Petition</h3>
+          <p>New requests arrive with hidden tradeoffs.</p>
+        </div>
+        <div class="step">
+          <h3>2. Decide Quickly</h3>
+          <p>Yes or no can shift multiple outcomes at once.</p>
+        </div>
+        <div class="step">
+          <h3>3. Stabilize the Realm</h3>
+          <p>Keep your domain balanced as the pace ramps up.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-grid">
+        <div>
+          <h2>Other Games</h2>
+          <p>This is part of a trio of decision-focused games. Try the others too.</p>
+        </div>
+        <div class="game-grid">
+          <a class="game-card" href="index.html">
+            <h3>Sort the Court!</h3>
+            <p>Rule a tiny kingdom with fast yes-or-no decisions.</p>
+          </a>
+          <a class="game-card" href="dandy.html">
+            <h3>The Dandy Effect</h3>
+            <p>A stylish chain of choices with surprising twists.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>As Expected of the Demon Lord on tapyesno.games • Keep chaos under control.</p>
+  </footer>
+  <script>
+    (() => {
+      const playLink = document.querySelector('a[href="#play"].button.primary');
+      const playSection = document.getElementById("play");
+      if (!playLink || !playSection) return;
+      playLink.addEventListener("click", (event) => {
+        event.preventDefault();
+        playSection.scrollIntoView({ behavior: "smooth" });
+        const iframe = playSection.querySelector("iframe");
+        if (iframe && iframe.requestFullscreen) {
+          iframe.requestFullscreen().catch(() => {});
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

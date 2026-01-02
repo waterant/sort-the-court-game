@@ -8,7 +8,15 @@
   <link rel="canonical" href="https://tapyesno.games/">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="theme-court">
+  <nav class="top-nav">
+    <div class="logo">tapyesno.games</div>
+    <div class="nav-links">
+      <a class="nav-link active" href="index.html">Sort the Court!</a>
+      <a class="nav-link" href="dandy.html">The Dandy Effect</a>
+      <a class="nav-link" href="demon-lord.html">As Expected of the Demon Lord</a>
+    </div>
+  </nav>
   <header class="hero">
     <div class="hero-content">
       <p class="eyebrow">tapyesno.games</p>
@@ -42,7 +50,7 @@
         <p>Jump straight into the game and make your first ruling.</p>
       </div>
       <div class="iframe-shell">
-        <iframe height="167" frameborder="0" src="https://itch.io/embed/47367" width="552" title="Sort the Court! by Graeme Borland"></iframe>
+        <iframe height="167" frameborder="0" src="https://itch.io/embed/47367" width="552" title="Sort the Court! by Graeme Borland" allow="fullscreen" allowfullscreen></iframe>
       </div>
       <p class="note">Tip: Decisions affect population, happiness, and gold. Keep them balanced for a thriving kingdom.</p>
     </section>
@@ -88,6 +96,23 @@
     </section>
 
     <section class="section">
+      <div class="section-header">
+        <h2>More Games in This Site</h2>
+        <p>Explore the other two decision-heavy games, all playable right here.</p>
+      </div>
+      <div class="game-grid">
+        <a class="game-card" href="dandy.html">
+          <h3>The Dandy Effect</h3>
+          <p>A stylish narrative of choices where small shifts echo later.</p>
+        </a>
+        <a class="game-card" href="demon-lord.html">
+          <h3>As Expected of the Demon Lord</h3>
+          <p>Rulings, consequences, and a mischievous court to manage.</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="section">
       <div class="section-grid">
         <div>
           <h2>Why It Stands Out</h2>
@@ -107,5 +132,20 @@
   <footer class="footer">
     <p>Sort the Court! on tapyesno.games • Make every yes or no count.</p>
   </footer>
+  <script>
+    (() => {
+      const playLink = document.querySelector('a[href="#play"].button.primary');
+      const playSection = document.getElementById("play");
+      if (!playLink || !playSection) return;
+      playLink.addEventListener("click", (event) => {
+        event.preventDefault();
+        playSection.scrollIntoView({ behavior: "smooth" });
+        const iframe = playSection.querySelector("iframe");
+        if (iframe && iframe.requestFullscreen) {
+          iframe.requestFullscreen().catch(() => {});
+        }
+      });
+    })();
+  </script>
 </body>
 </html>

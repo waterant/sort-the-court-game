@@ -122,14 +122,35 @@
     (() => {
       const playLink = document.querySelector('a[href="#play"].button.primary');
       const playSection = document.getElementById("play");
-      if (!playLink || !playSection) return;
-      playLink.addEventListener("click", (event) => {
-        event.preventDefault();
-        const iframe = playSection.querySelector("iframe");
-        if (iframe && iframe.requestFullscreen) {
-          iframe.requestFullscreen().catch(() => {});
-        }
-      });
+      if (playLink && playSection) {
+        playLink.addEventListener("click", (event) => {
+          event.preventDefault();
+          const iframe = playSection.querySelector("iframe");
+          if (iframe && iframe.requestFullscreen) {
+            iframe.requestFullscreen().catch(() => {});
+          }
+        });
+      }
+
+      let lastSparkle = 0;
+      const spawnSparkle = (x, y) => {
+        const sparkle = document.createElement("span");
+        sparkle.className = "sparkle";
+        sparkle.style.left = `${x}px`;
+        sparkle.style.top = `${y}px`;
+        document.body.appendChild(sparkle);
+        sparkle.addEventListener("animationend", () => sparkle.remove());
+      };
+
+      const shouldSparkle = window.matchMedia("(hover: hover)").matches;
+      if (shouldSparkle) {
+        window.addEventListener("pointermove", (event) => {
+          const now = Date.now();
+          if (now - lastSparkle < 40) return;
+          lastSparkle = now;
+          spawnSparkle(event.clientX, event.clientY);
+        });
+      }
     })();
   </script>
 </body>

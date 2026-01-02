@@ -197,6 +197,20 @@
         </div>
       </div>
     </section>
+
+    <section class="section audio-section">
+      <div class="section-header">
+        <h2>Background Music</h2>
+        <p>Pick a track and let the kingdom breathe. Music stays on your device and can be paused anytime.</p>
+      </div>
+      <div class="audio-bar">
+        <button class="button ghost" data-audio="track-1">Play Pixel Dawn</button>
+        <button class="button ghost" data-audio="track-2">Play Neon Dusk</button>
+        <button class="button ghost" data-audio="stop">Stop Music</button>
+      </div>
+      <audio id="track-1" preload="none" loop src="assets/bgm-pixel-dawn.mp3"></audio>
+      <audio id="track-2" preload="none" loop src="assets/bgm-neon-dusk.mp3"></audio>
+    </section>
   </main>
 
   <footer class="footer">
@@ -206,14 +220,69 @@
     (() => {
       const playLink = document.querySelector('a[href="#play"].button.primary');
       const playSection = document.getElementById("play");
-      if (!playLink || !playSection) return;
-      playLink.addEventListener("click", (event) => {
-        event.preventDefault();
-        const iframe = playSection.querySelector("iframe");
-        if (iframe && iframe.requestFullscreen) {
-          iframe.requestFullscreen().catch(() => {});
-        }
+      const audioButtons = document.querySelectorAll("[data-audio]");
+      const track1 = document.getElementById("track-1");
+      const track2 = document.getElementById("track-2");
+      const audioMap = {
+        "track-1": track1,
+        "track-2": track2
+      };
+
+      const stopAll = () => {
+        Object.values(audioMap).forEach((audio) => {
+          if (audio) {
+            audio.pause();
+            audio.currentTime = 0;
+          }
+        });
+      };
+
+      audioButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const key = button.getAttribute("data-audio");
+          if (key === "stop") {
+            stopAll();
+            return;
+          }
+          const audio = audioMap[key];
+          if (!audio) return;
+          stopAll();
+          audio.play().catch(() => {});
+        });
       });
+
+      if (playLink && playSection) {
+        playLink.addEventListener("click", (event) => {
+          event.preventDefault();
+          const iframe = playSection.querySelector("iframe");
+          if (iframe && iframe.requestFullscreen) {
+            iframe.requestFullscreen().catch(() => {});
+          }
+          if (track1 && track1.paused) {
+            track1.play().catch(() => {});
+          }
+        });
+      }
+
+      let lastSparkle = 0;
+      const spawnSparkle = (x, y) => {
+        const sparkle = document.createElement("span");
+        sparkle.className = "sparkle";
+        sparkle.style.left = `${x}px`;
+        sparkle.style.top = `${y}px`;
+        document.body.appendChild(sparkle);
+        sparkle.addEventListener("animationend", () => sparkle.remove());
+      };
+
+      const shouldSparkle = window.matchMedia("(hover: hover)").matches;
+      if (shouldSparkle) {
+        window.addEventListener("pointermove", (event) => {
+          const now = Date.now();
+          if (now - lastSparkle < 40) return;
+          lastSparkle = now;
+          spawnSparkle(event.clientX, event.clientY);
+        });
+      }
     })();
   </script>
 </body>

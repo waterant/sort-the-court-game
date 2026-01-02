@@ -213,6 +213,7 @@ ul {
   display: grid;
   gap: 18px;
   border: 1px solid var(--line);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .stat {
@@ -239,6 +240,7 @@ ul {
   padding: 36px;
   border: 1px solid var(--line);
   box-shadow: 0 16px 40px rgba(15, 25, 50, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .section-header {
@@ -280,6 +282,7 @@ ul {
   padding: 24px;
   border-radius: 20px;
   border: 1px solid var(--accent-border);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .highlight {
@@ -327,6 +330,49 @@ ul {
   border-radius: 18px;
   padding: 18px;
   border: 1px solid rgba(11, 18, 32, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.section:hover,
+.hero-card:hover,
+.info-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 36px rgba(10, 20, 40, 0.12);
+  border-color: var(--accent-border);
+}
+
+.step:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(10, 20, 40, 0.1);
+}
+
+.audio-section .audio-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.sparkle {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffffff 0%, var(--accent) 45%, transparent 70%);
+  pointer-events: none;
+  mix-blend-mode: screen;
+  animation: sparkle-fade 0.8s ease-out forwards;
+  box-shadow: 0 0 12px var(--accent-glow);
+}
+
+@keyframes sparkle-fade {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2);
+    opacity: 0;
+  }
 }
 
 .footer {

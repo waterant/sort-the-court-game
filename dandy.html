@@ -125,7 +125,6 @@
       if (!playLink || !playSection) return;
       playLink.addEventListener("click", (event) => {
         event.preventDefault();
-        playSection.scrollIntoView({ behavior: "smooth" });
         const iframe = playSection.querySelector("iframe");
         if (iframe && iframe.requestFullscreen) {
           iframe.requestFullscreen().catch(() => {});
